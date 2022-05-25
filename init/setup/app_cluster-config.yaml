@@ -11,6 +11,6 @@ spec:
   source:
     directory:
       recurse: true
-    path: cluster
-    repoURL: https://github.com/apoczekalewicz/gitops-maincluster.git
+    path: cluster-configs
+    repoURL: https://github.com/apoczekalewicz/gitops-cluster-main.git
     targetRevision: HEAD
