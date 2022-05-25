@@ -4,7 +4,6 @@ metadata:
   labels:
     app: httpd
   name: httpd
-  namespace: demo-acm
 spec:
   port:
     targetPort: 8080
