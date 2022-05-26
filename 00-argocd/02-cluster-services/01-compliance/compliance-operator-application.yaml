@@ -14,7 +14,7 @@ spec:
   source:
     path: 02-cluster-services/01-compliance
     repoURL: https://github.com/apoczekalewicz/gitops.git
-    targetRevision: main
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: false
