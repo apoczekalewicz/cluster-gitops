@@ -7,4 +7,4 @@ bases:
   - ../../../02-cluster-services/01-complaiance
 
 resources:
-  - cluster-config-project.yaml
+  - cluster-services-project.yaml
