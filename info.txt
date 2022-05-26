@@ -1,0 +1,45 @@
+main - nazwa/rodzaj klastra
+
+setup/<klaster>/kustomization.yaml -> 01-argocd/01-clusters/<klaster>/00-bootstrap (to tworzy projekt + aplikacje z 01-argocd/01-clusters/<klaster>/*)
+
+
+Katalog glowny:
+01-argocd -> obiekty ktore tu sa definiowane to tworzenie: 1) AppProjectow 2) Application
+02-cluster-config - wlasciwe konfiguracje klastrow (kazda jest oddzielna Application - i sa w oddzielnych folderach)
+                    np. 02-cluster-config/02-groups-and-membership
+03-cluster-services - glownie operatory i uslugi w klastrze np. ACS albo compliance operator
+04-tenants - projekty albo puste ale z uprawnieniami userow albo wypelnione aplikacjami
+
+
+01-argocd/02-cluster-config     - definicja Application dla kazdej zdefiniowanej konfiguracji
+01-argocd/03-cluster-services   - definicja Application dla kazdego zdefiniowanego Service
+01-argocd/04-tenants            - definicja Application dla kazdego mozliwego tenatu
+
+01-argocd/01-clusters/
+                      <klaster>/* - tutaj dla klastra tworzone sa projekty dla Config, Service, Tenant
+np.
+01-argocd/01-clusters/main/00-bootstrap         - robi projekt i aplikacje ktora odwoluje sie do 01-argocd/01-clusters/main (w Kustomize uwzglednia te 3 katalogi ponizej)
+01-argocd/01-clusters/main/01-cluster-config    - robi projekt i aplikacje ktora odwoluje sie do WYBRANYCH katalogow definiujacych Aplikacje z configami
+01-argocd/01-clusters/main/02-cluster-services  - robi projekt i aplikacje ktora odwoluje sie do WYBRANYCH katalogow definiujacych Aplikacje z servicami
+01-argocd/01-clusters/main/03-tenants           - robi projekt i aplikacje ktora odwoluje sie do WYBRANYCH katalogow definiujacych Aplikacje z tenantsami
+                                                odwolania robione sa poprzez odpowiednie Kustomize ktore odwoluja sie do katalogow z 01-argocd/02-cluster-config/<costam> itp.
+
+
+Przyklad:
+02-cluster-config/02-groups-and-membership - definicja roznych yamli ktore maja byc na klastrze dot. grup i userow
+01-argocd/02-cluster-config/02-groups-and-membership - definicja Application ktora odwoluje sie do katalogu (tego wyzej)
+01-argocd/01-clusters/main/01-cluster-config - dla klastra main zdefiniowany jest tu Projekt i plik kustomize ktory podepnie wybrane Aplikacje pod katem konfigow:
+
+        kind: Kustomization
+        apiVersion: kustomize.config.k8s.io/v1beta1
+
+        namespace: openshift-gitops
+
+        bases:
+          - ../../../02-cluster-config/01-openshift-gitops
+          - ../../../02-cluster-config/02-groups-and-membership
+        #  - ../../../02-cluster-config/03-cluster-monitoring
+
+        resources:
+          - cluster-config-project.yaml
+
