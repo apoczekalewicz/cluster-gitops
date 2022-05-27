@@ -6,6 +6,7 @@ namespace: openshift-gitops
 bases:
   - ../../../02-cluster-services/01-compliance
   - ../../../02-cluster-services/02-openshift-pipelines
+  - ../../../02-cluster-services/03-acs
 
 resources:
   - cluster-services-project.yaml
