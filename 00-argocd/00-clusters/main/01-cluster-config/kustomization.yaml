@@ -5,6 +5,7 @@ namespace: openshift-gitops
 
 bases:
   - ../../../01-cluster-config/01-groups-and-membership
+  - ../../../01-cluster-config/02-openshift-gitops
 
 resources:
   - cluster-config-project.yaml
