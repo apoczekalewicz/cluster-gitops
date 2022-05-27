@@ -5,10 +5,10 @@ metadata:
     argocd.argoproj.io/sync-wave: "37"
   labels:
     gitops.ownedBy: openshift-gitops
-  name: compliance-operator
+  name: openshift-pipelines
 spec:
   destination:
-    namespace: openshift-compliance
+    namespace: openshift-pipelines
     server: https://kubernetes.default.svc
   project: cluster-services
   source:
