@@ -1,0 +1,40 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: change-default-sc-annotation
+  generateName: change-default-sc-annotation-
+spec:
+  template:
+    spec:
+      containers:
+      - name: sc-labeler
+        image: image-registry.openshift-image-registry.svc:5000/openshift/cli
+        env:
+          - name: DEFAULT_SC
+            value: 'ocs-storagecluster-ceph-rbd'
+          - name: ANNOTATE
+            value: 'storageclass.kubernetes.io/is-default-class'
+        command:
+          - /bin/bash
+          - -c
+          - |
+            # Wait for $DEFAULT_SC to be present
+            while oc get ${DEFAULT_SC} &>/dev/null
+            do  
+              echo "Waiting for sc $DEFAULT_SC - sleep 10" 
+              sleep 10
+            done
+            
+            echo "Removing annotation $ANNOTATE from all sc"
+            for i in $( oc get sc | awk '{ print $1 }' | grep -v NAME)
+            do 
+              oc annotate sc $i ${ANNOTATE}-
+            done 
+
+            echo "Add annotatation $ANNOTATE to $DEFAULT_SC"
+            oc annotate sc ${DEFAULT_SC} ${ANNOTATE}=true
+
+      restartPolicy: Never
+      serviceAccount: odf-sc-labeler
+      serviceAccountName: odf-sc-labeler
+  backoffLimit: 1
