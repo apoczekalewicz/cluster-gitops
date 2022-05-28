@@ -14,7 +14,7 @@ spec:
   file_storage_access_mode: ReadWriteMany
   content:
     log_level: INFO
-    replicas: 2
+    replicas: 1
   postgres_storage_requirements:
     limits:
       storage: 50Gi
@@ -34,5 +34,5 @@ spec:
   resource_manager:
     replicas: 1
   worker:
-    replicas: 2
+    replicas: 1
 
