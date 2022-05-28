@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: openshift-gitops
 
 resources:
-  - groups-and-membership-application.yaml
+  - oauth-application.yaml
