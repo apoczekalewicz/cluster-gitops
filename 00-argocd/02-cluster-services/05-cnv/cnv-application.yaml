@@ -5,14 +5,14 @@ metadata:
     argocd.argoproj.io/sync-wave: "37"
   labels:
     gitops.ownedBy: openshift-gitops
-  name: compliance-operator
+  name: cnv
 spec:
   destination:
     namespace: openshift-compliance
     server: https://kubernetes.default.svc
   project: cluster-services
   source:
-    path: 02-cluster-services/01-compliance
+    path: 02-cluster-services/05-cnv
     repoURL: https://github.com/apoczekalewicz/gitops.git
     targetRevision: HEAD
   syncPolicy:
