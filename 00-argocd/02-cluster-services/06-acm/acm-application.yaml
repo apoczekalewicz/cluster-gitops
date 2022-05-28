@@ -8,7 +8,7 @@ metadata:
   name: acm
 spec:
   destination:
-    namespace: openshift-compliance
+    namespace: open-cluster-management
     server: https://kubernetes.default.svc
   project: cluster-services
   source:
