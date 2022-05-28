@@ -10,6 +10,6 @@ bases:
   - ../../../02-cluster-services/04-odf
   - ../../../02-cluster-services/05-cnv
   - ../../../02-cluster-services/06-acm
-
+  - ../../../02-cluster-services/07-aap
 resources:
   - cluster-services-project.yaml
