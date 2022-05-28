@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: openshift-cnv
 
 bases:
-  - https://github.com/redhat-cop/gitops-catalog/tree/main/virtualization-operator/base
+  - https://github.com/redhat-cop/gitops-catalog/virtualization-operator/base?ref=main
