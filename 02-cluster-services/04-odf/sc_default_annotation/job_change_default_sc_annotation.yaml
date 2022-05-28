@@ -19,7 +19,7 @@ spec:
           - -c
           - |
             # Wait for $DEFAULT_SC to be present
-            while ! oc get ${DEFAULT_SC} &>/dev/null
+            while ! oc get sc ${DEFAULT_SC} &>/dev/null
             do  
               echo "Waiting for sc $DEFAULT_SC - sleep 10" 
               sleep 10
