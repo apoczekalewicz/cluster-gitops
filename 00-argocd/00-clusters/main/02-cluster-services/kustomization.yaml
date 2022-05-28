@@ -8,7 +8,7 @@ bases:
   - ../../../02-cluster-services/02-openshift-pipelines
 #  - ../../../02-cluster-services/03-acs
   - ../../../02-cluster-services/04-odf
-  - ../../../02-cluster-services/05-cnv
+#  - ../../../02-cluster-services/05-cnv
 
 resources:
   - cluster-services-project.yaml
