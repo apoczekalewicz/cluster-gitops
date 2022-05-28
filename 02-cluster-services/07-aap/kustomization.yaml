@@ -5,11 +5,3 @@ bases:
   - operator
   - instance
 
-patchesJson6902:
-  - target:
-      group: operators.coreos.com
-      version: v1alpha1
-      kind: Subscription
-      name: ansible-automation-platform
-      namespace: ansible-automation-platform
-    path: patch-channel.yaml

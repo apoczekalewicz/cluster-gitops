@@ -3,3 +3,13 @@ kind: Kustomization
 
 bases:
   - github.com/redhat-cop/gitops-catalog/ansible-automation-platform/operator/overlays/stable-2.1-cluster-scoped?ref=main
+
+patchesJson6902:
+  - target:
+      group: operators.coreos.com
+      version: v1alpha1
+      kind: Subscription
+      name: ansible-automation-platform
+      namespace: ansible-automation-platform
+    path: patch-channel.yaml
+

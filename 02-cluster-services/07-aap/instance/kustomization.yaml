@@ -3,3 +3,6 @@ kind: Kustomization
 
 bases:
   - github.com/redhat-cop/gitops-catalog/ansible-automation-platform/instance/overlays/default?ref=main
+
+resources:
+  - automation-hub.yaml
