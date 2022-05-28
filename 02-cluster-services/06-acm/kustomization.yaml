@@ -4,6 +4,6 @@ kind: Kustomization
 
 bases:
   - instance
-  - observability
+#  - observability
   - operator
 
