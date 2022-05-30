@@ -8,7 +8,7 @@ metadata:
   name: vms
 spec:
   destination:
-    namespace: example
+    namespace: vms
     server: https://kubernetes.default.svc
   project: tenants
   source:
