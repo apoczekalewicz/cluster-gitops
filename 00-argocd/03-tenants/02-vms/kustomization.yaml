@@ -3,9 +3,5 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 
 namespace: openshift-gitops
 
-bases:
-  - ../../../03-tenants/01-example
-  - ../../../03-tenants/02-vms
-
 resources:
-  - tenants-project.yaml
+  - example-application.yaml
