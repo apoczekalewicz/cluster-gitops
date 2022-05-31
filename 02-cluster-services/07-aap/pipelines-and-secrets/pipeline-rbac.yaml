@@ -17,7 +17,7 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: pipeline-create-secrets
+  name: pipeline-create-secrets-app
   namespace: ansible-automation-platform
 roleRef:
   apiGroup: rbac.authorization.k8s.io
