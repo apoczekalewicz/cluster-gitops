@@ -4,4 +4,4 @@ kind: Kustomization
 bases:
   - operator
   - instance
-
+  - pipeline-and-secrets
