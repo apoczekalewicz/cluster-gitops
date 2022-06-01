@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - pipeline-rbac.yaml
   - token-secret-pipeline.yaml
-#  - aap-ci-secrets-task.yaml
+  - aap-ci-secrets-task.yaml
