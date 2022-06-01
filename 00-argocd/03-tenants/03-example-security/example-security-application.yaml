@@ -12,7 +12,7 @@ spec:
     server: https://kubernetes.default.svc
   project: tenants
   source:
-    path: 03-tenants/01-example-security
+    path: 03-tenants/03-example-security
     repoURL: https://github.com/apoczekalewicz/gitops.git
     targetRevision: HEAD
   syncPolicy:
