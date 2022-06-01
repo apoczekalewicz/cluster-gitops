@@ -1,7 +1,7 @@
 apiVersion: user.openshift.io/v1
 kind: Group
 metadata:
-  name: admins
+  name: cluster-admins
 users:
   - admin
 
@@ -18,5 +18,5 @@ roleRef:
 subjects:
 - apiGroup: rbac.authorization.k8s.io
   kind: Group
-  name: admins
+  name: cluster-admins
 
