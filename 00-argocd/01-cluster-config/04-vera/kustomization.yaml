@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: openshift-gitops
 
 resources:
-  - dns-vera-application.yaml
+  - vera-application.yaml
