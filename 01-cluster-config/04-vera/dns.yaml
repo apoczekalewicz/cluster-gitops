@@ -1,0 +1,22 @@
+apiVersion: operator.openshift.io/v1
+kind: DNS
+metadata:
+  name: default
+spec:
+  logLevel: Normal
+  nodePlacement: {}
+  operatorLogLevel: Normal
+  upstreamResolvers:
+    policy: Sequential
+    upstreams:
+    - port: 53
+      type: SystemResolvConf
+
+  servers:
+  - name: vmware
+    zones: 
+      - spm.lab
+    forwardPlugin:
+      upstreams: 
+        - 172.17.16.2
+
