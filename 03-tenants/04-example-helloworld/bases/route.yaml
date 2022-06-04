@@ -12,5 +12,3 @@ spec:
   tls:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
-status:
-  ingress: []
