@@ -1,0 +1,59 @@
+# Users:
+#
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: example-helloworld-test-user
+  namespace: example-helloworld-test
+subjects:
+  - kind: Group
+    apiGroup: rbac.authorization.k8s.io
+    name: example-helloworld-users
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: view
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: example-helloworld-prod-user
+  namespace: example-helloworld-prod
+subjects:
+  - kind: Group
+    apiGroup: rbac.authorization.k8s.io
+    name: example-helloworld-users
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: view
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: example-helloworld-dev-user
+  namespace: example-helloworld-dev
+subjects:
+  - kind: Group
+    apiGroup: rbac.authorization.k8s.io
+    name: example-helloworld-users
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: view
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: example-helloworld-cicd-user
+  namespace: example-helloworld-cicd
+subjects:
+  - kind: Group
+    apiGroup: rbac.authorization.k8s.io
+    name: example-helloworld-users
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: view
+
+

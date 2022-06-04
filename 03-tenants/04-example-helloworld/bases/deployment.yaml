@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      deployment: helloworld
+  template:
+    metadata:
+      labels:
+        deployment: helloworld
+    spec:
+      containers:
+      - name: the-container
+        image: quay.io/apoczeka/app-python-hello
+        ports:
+        - containerPort: 8080
+        env:
+        - name: APPENV
+          valueFrom:
+            configMapKeyRef:
+              name: appconfig
+              key: msg

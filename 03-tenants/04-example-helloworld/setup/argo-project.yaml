@@ -1,0 +1,66 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: example-helloworld
+  namespace: openshift-gitops
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: example-helloworld project
+
+  sourceRepos:
+  - 'https://github.com/apoczekalewicz/gitops.git'
+  
+  destinations:
+  - namespace: 'example-helloworld-dev'
+    server: https://kubernetes.default.svc
+  - namespace: 'example-helloworld-test'
+    server: https://kubernetes.default.svc
+  - namespace: 'example-helloworld-prod'
+    server: https://kubernetes.default.svc
+  - namespace: 'example-helloworld-cicd'
+    server: https://kubernetes.default.svc
+
+  #clusterResourceWhitelist:
+  #- group: ''
+  #  kind: Namespace
+ 
+  namespaceResourceWhitelist:
+  - group: 'apps'
+    kind: Deployment
+  - group: ''
+    kind: Service
+  - group: 'route.openshift.io'
+    kind: Route 
+  - group: ''
+    kind: ConfigMap
+  - group: ''
+    kind: PersistentVolumeClaim
+  - group: ''
+    kind: Secret
+  - group: 'tekton.dev'
+    kind: Task
+  - group: 'tekton.dev'
+    kind: Pipeline
+  - group:  'monitoring.coreos.com'
+    kind: ServiceMonitor 
+  - group: 'networking.k8s.io'
+    kind: NetworkPolicy  
+ 
+  orphanedResources:
+    warn: false
+
+  roles:
+  - name: read-only
+    description: Read-only privileges
+    policies:
+    - p, proj:example-helloworld:read-only, applications, get, example-helloworld/*, allow
+    groups:
+    - example-helloworld-admins
+
+  - name: ci-role
+    description: Sync privileges
+    policies:
+    - p, proj:example-helloworld:ci-role, applications, sync, example-helloworld/*, allow
+    groups:
+    - example-helloworld-admins

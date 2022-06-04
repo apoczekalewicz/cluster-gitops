@@ -1,0 +1,59 @@
+# Admins:
+#
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: example-helloworld-test-admin
+  namespace: example-helloworld-test
+subjects:
+  - kind: Group
+    apiGroup: rbac.authorization.k8s.io
+    name: example-helloworld-admins
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: admin
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: example-helloworld-prod-admin
+  namespace: example-helloworld-prod
+subjects:
+  - kind: Group
+    apiGroup: rbac.authorization.k8s.io
+    name: example-helloworld-admins
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: admin
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: example-helloworld-dev-admin
+  namespace: example-helloworld-dev
+subjects:
+  - kind: Group
+    apiGroup: rbac.authorization.k8s.io
+    name: example-helloworld-admins
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: admin
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: example-helloworld-cicd-admin
+  namespace: example-helloworld-cicd
+subjects:
+  - kind: Group
+    apiGroup: rbac.authorization.k8s.io
+    name: example-helloworld-admins
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: admin
+
+
