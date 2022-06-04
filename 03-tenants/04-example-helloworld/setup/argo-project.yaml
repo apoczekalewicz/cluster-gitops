@@ -57,6 +57,7 @@ spec:
     - p, proj:example-helloworld:read-only, applications, get, example-helloworld/*, allow
     groups:
     - example-helloworld-admins
+    - example-helloworld-users
 
   - name: ci-role
     description: Sync privileges
@@ -64,3 +65,4 @@ spec:
     - p, proj:example-helloworld:ci-role, applications, sync, example-helloworld/*, allow
     groups:
     - example-helloworld-admins
+
