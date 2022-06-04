@@ -29,7 +29,7 @@ spec:
         namespace: example-helloworld-{{cluster}}
       syncPolicy:
         automated:
-          prune: false
+          prune: true
           selfHeal: true
         syncOptions:
           - ApplyOutOfSyncOnly=true
