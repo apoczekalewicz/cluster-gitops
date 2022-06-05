@@ -4,8 +4,3 @@ resources:
 #- configmap.yaml
 - route.yaml
 
-configMapGenerator:
-- name: appconfig
-  files:
-  - envs/msg
-
