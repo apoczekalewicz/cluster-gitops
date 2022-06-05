@@ -1,5 +1,11 @@
 resources:
 - deployment.yaml
 - service.yaml
-- configmap.yaml
+#- configmap.yaml
 - route.yaml
+
+configMapGenerator:
+- name: appconfig
+  files:
+  - envs/msg
+

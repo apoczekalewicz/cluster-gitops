@@ -1,2 +1,8 @@
 bases:
   - ../../bases
+
+configMapGenerator:
+- name: appconfig
+  files:
+  - envs/msg
+
