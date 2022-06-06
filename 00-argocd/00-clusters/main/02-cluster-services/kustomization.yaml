@@ -11,5 +11,6 @@ bases:
   - ../../../02-cluster-services/05-cnv
   - ../../../02-cluster-services/06-acm
   - ../../../02-cluster-services/07-aap
+  - ../../../02-cluster-services/08-sealed-secrets
 resources:
   - cluster-services-project.yaml
