@@ -46,7 +46,7 @@ spec:
     kind: ServiceMonitor 
   - group: 'networking.k8s.io'
     kind: NetworkPolicy  
-  - group: 'bitnami.com/v1alpha1'
+  - group: 'bitnami.com'
     kind: sealedsecret
  
   orphanedResources:
