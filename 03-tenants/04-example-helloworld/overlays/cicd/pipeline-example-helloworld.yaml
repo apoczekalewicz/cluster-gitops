@@ -46,4 +46,3 @@ spec:
         name: git-clone
       workspaces:
         - name: workspace
-          workspace: workspace
