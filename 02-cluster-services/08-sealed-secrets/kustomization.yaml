@@ -8,3 +8,11 @@ bases:
 
 resources:
   - namespace.yaml
+
+patchesJson6902:
+  - target:
+      version: v1
+      group: apps
+      kind: Deployment
+      name: sealed-secrets-controller
+    path: patch-sealed-secrets.yaml
