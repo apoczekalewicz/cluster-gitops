@@ -47,8 +47,8 @@ spec:
       workspaces:
         - name: output
           workspace: workspace
-    workspaces:
-      - name: workspace
-      - name: maven-settings
-      - name: images-url
-      - name: git-basic-auth
+  workspaces:
+    - name: workspace
+    - name: maven-settings
+    - name: images-url
+    - name: git-basic-auth
