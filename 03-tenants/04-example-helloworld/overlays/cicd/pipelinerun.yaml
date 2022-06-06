@@ -1,0 +1,30 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: example-helloworld
+  namespace: example-helloworld-cicd
+spec:
+  params:
+    - name: APP_SOURCE_GIT
+      value: 'https://github.com/apoczekalewicz/app-python-helloworld.git'
+    - name: APP_SOURCE_REVISION
+      value: master
+    - name: APP_MANIFESTS_GIT
+      value: 'https://github.com/apoczeka/gitops.git'
+    - name: APP_IMAGE_TAG
+      value: 'latest'
+    - name: APP_IMAGE
+      value: 'quay.io/apoczeka/example-helloworld'
+  pipelineRef:
+    name: example-helloworld
+  serviceAccountName: pipeline
+  timeout: 1h0m0s
+  workspaces:
+    - name: workspace
+      persistentVolumeClaim:
+        claimName: workspace
+    - emptyDir: {}
+      name: images-url
+    - name: git-basic-auth
+      secret:
+        secretName: github-creds
