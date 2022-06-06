@@ -45,5 +45,5 @@ spec:
         kind: ClusterTask
         name: git-clone
       workspaces:
-        - name: output
+        - name: workspace
           workspace: workspace
