@@ -45,4 +45,10 @@ spec:
         kind: ClusterTask
         name: git-clone
       workspaces:
-        - name: workspace
+        - name: output
+          workspace: workspace
+    workspaces:
+      - name: workspace
+      - name: maven-settings
+      - name: images-url
+      - name: git-basic-auth
