@@ -1,0 +1,49 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: example-helloworld
+spec:
+  params:
+    - default: 'https://github.com/apoczekalewicz/app-python-helloworld.git'
+      name: APP_SOURCE_GIT
+      type: string
+    - default: master
+      name: APP_SOURCE_REVISION
+      type: string
+    - default: 'https://github.com/apoczeka/gitops.git'
+      name: APP_MANIFESTS_GIT
+      type: string
+    - default: latest
+      name: APP_IMAGE_TAG
+      type: string
+    - default: quay.io/apoczeka/example-helloworld
+      name: APP_IMAGE
+      type: string
+  tasks:
+    - name: git-clone
+      params:
+        - name: url
+          value: $(params.APP_SOURCE_GIT)
+        - name: revision
+          value: $(params.APP_SOURCE_REVISION)
+        - name: submodules
+          value: 'true'
+        - name: depth
+          value: '01'
+        - name: sslVerify
+          value: 'false'
+        - name: deleteExisting
+          value: 'true'
+        - name: verbose
+          value: 'true'
+        - name: gitInitImage
+          value: >-
+            registry.redhat.io/openshift-pipelines/pipelines-git-init-rhel8@sha256:da1aedf0b17f2b9dd2a46edc93ff1c0582989414b902a28cd79bad8a035c9ea4
+        - name: userHome
+          value: /tekton/home
+      taskRef:
+        kind: ClusterTask
+        name: git-clone
+      workspaces:
+        - name: output
+          workspace: workspace

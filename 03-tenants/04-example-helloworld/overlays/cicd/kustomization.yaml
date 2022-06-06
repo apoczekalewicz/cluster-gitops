@@ -5,3 +5,4 @@ resources:
 - pvc-workspace.yaml
 - sealed-quay-secret.yaml
 - sealed-github-secret.yaml
+- pipeline-example-helloworld.yaml
