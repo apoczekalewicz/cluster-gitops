@@ -47,7 +47,7 @@ spec:
   - group: 'networking.k8s.io'
     kind: NetworkPolicy  
   - group: 'bitnami.com'
-    kind: sealedsecret
+    kind: SealedSecret
  
   orphanedResources:
     warn: false
