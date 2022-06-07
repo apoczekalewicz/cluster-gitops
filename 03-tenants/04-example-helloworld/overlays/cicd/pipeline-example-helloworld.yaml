@@ -16,7 +16,7 @@ spec:
     - default: latest
       name: APP_IMAGE_TAG
       type: string
-    - default: quay.io/apoczeka/example-helloworld
+    - default: 'quay.io/apoczeka/example-helloworld'
       name: APP_IMAGE
       type: string
   tasks:
@@ -47,6 +47,34 @@ spec:
       workspaces:
         - name: output
           workspace: workspace
+
+    - name: build-image
+      params:
+        - name: IMAGE
+          value: >-
+            image-registry.openshift-image-registry.svc:5000/$(context.pipelineRun.namespace)/$(context.pipeline.name):$(params.APP_IMAGE_TAG)
+        - name: BUILDER_IMAGE
+          value: >-
+            registry.redhat.io/rhel8/buildah@sha256:99cae35f40c7ec050fed3765b2b27e0b8bbea2aa2da7c16408e2ca13c60ff8ee
+        - name: STORAGE_DRIVER
+          value: vfs
+        - name: DOCKERFILE
+          value: './Dockerfile'
+        - name: CONTEXT
+          value: '.'
+        - name: TLSVERIFY
+          value: 'true'
+        - name: FORMAT
+          value: oci
+      runAfter:
+        - git-clone
+      taskRef:
+        kind: ClusterTask
+        name: buildah
+      workspaces:
+        - name: source
+          workspace: workspace
+
   workspaces:
     - name: workspace
     - name: images-url
