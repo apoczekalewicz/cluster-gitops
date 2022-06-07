@@ -4,6 +4,9 @@ kind: Kustomization
 bases:
   - github.com/redhat-cop/gitops-catalog/ansible-automation-platform/operator/overlays/stable-2.1-cluster-scoped?ref=main
 
+resources:
+  - namespace.yaml
+
 patchesJson6902:
   - target:
       group: operators.coreos.com
