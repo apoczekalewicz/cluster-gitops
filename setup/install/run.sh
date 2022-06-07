@@ -1,3 +1,6 @@
 oc apply -f ./manifests/operator
-oc wait --for=condition=available deployment --all -n openshift-gitops
-echo DONE
+echo -e "\n\n### Deployments:"
+oc get deployments -n openshift-gitops
+echo -e "\n\n### Status:"
+oc wait --for=condition=Available deployment --all -n openshift-gitops
+echo -e "\nDONE"
