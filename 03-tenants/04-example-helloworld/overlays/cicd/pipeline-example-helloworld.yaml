@@ -75,6 +75,27 @@ spec:
         - name: source
           workspace: workspace
 
+
+    - name: skopeo-copy
+      params:
+        - name: srcImageURL
+          value: >-
+            docker://image-registry.openshift-image-registry.svc:5000/$(context.pipelineRun.namespace)/$(context.pipeline.name):$(params.APP_IMAGE_TAG)
+        - name: destImageURL
+          value: 'docker://$(params.APP_IMAGE):$(params.APP_IMAGE_TAG)'
+        - name: srcTLSverify
+          value: 'false'
+        - name: destTLSverify
+          value: 'true'
+      runAfter:
+        - build-image
+      taskRef:
+        kind: ClusterTask
+        name: skopeo-copy
+      workspaces:
+        - name: images-url
+          workspace: images-url
+
   workspaces:
     - name: workspace
     - name: images-url
