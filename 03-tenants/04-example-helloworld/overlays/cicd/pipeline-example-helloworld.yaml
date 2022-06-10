@@ -13,7 +13,7 @@ spec:
     - default: 'https://github.com/apoczekalewicz/gitops.git'
       name: APP_MANIFESTS_GIT
       type: string
-    - default: '1.0'
+    - default: 'latest'
       name: APP_IMAGE_TAG
       type: string
     - default: 'quay.io/apoczeka/example-helloworld'

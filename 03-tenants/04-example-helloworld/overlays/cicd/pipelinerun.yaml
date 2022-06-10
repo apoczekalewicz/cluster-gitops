@@ -12,7 +12,7 @@ spec:
     - name: APP_MANIFESTS_GIT
       value: 'https://github.com/apoczekalewicz/gitops.git'
     - name: APP_IMAGE_TAG
-      value: 'latest'
+      value: '1.0'
     - name: APP_IMAGE
       value: 'quay.io/apoczeka/example-helloworld'
   pipelineRef:
