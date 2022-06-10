@@ -8,7 +8,7 @@ commonAnnotations:
 #patchesStrategicMerge:
 #- configmap.yaml
 
-resources:
+bases:
 - ../../bases
 
 configMapGenerator:
