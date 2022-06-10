@@ -6,7 +6,7 @@ metadata:
 spec:
   params:
     - name: APP_SOURCE_GIT
-      value: 'https://github.com/apoczekalewicz/app-python-helloworld.git'
+      value: 'https://github.com/apoczekalewicz/gitops.git'
 
     - name: APP_SOURCE_REVISION
       value: 'master'
