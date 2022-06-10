@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: the-container
-        image: quay.io/apoczeka/app-python-hello
+        image: quay.io/apoczeka/app-python-hello:latest
         ports:
         - containerPort: 8080
         env:
