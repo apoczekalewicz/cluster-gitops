@@ -21,4 +21,3 @@ images:
 - name: quay.io/apoczeka/example-helloworld:latest
   newName: quay.io/apoczeka/example-helloworld
   newTag: "1.0"
-
