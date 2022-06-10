@@ -13,7 +13,7 @@ spec:
     - default: 'https://github.com/apoczeka/gitops.git'
       name: APP_MANIFESTS_GIT
       type: string
-    - default: latest
+    - default: 1.0
       name: APP_IMAGE_TAG
       type: string
     - default: 'quay.io/apoczeka/example-helloworld'
@@ -95,6 +95,33 @@ spec:
       workspaces:
         - name: images-url
           workspace: images-url
+
+
+
+    - name: git-update-deployment
+      params:
+        - name: GIT_REPOSITORY
+          value: $(params.APP_MANIFESTS_GIT)
+        - name: CURRENT_IMAGE
+          value: '$(params.APP_IMAGE):latest'
+        - name: NEW_IMAGE
+          value: $(params.APP_IMAGE)
+        - name: KUSTOMIZATION_PATH
+          value: 03-tenants/04-example-helloworld/overlays/dev
+        - name: GIT_REVISION
+          value: main
+        - name: NEW_TAG
+          value: $(params.APP_IMAGE_TAG)
+      runAfter:
+        - skopeo-copy
+      taskRef:
+        kind: Task
+        name: git-update-deployment
+      workspaces:
+        - name: workspace
+          workspace: workspace
+        - name: basic-auth
+          workspace: git-basic-auth
 
   workspaces:
     - name: workspace
