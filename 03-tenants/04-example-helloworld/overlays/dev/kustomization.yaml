@@ -4,18 +4,21 @@ kind: Kustomization
 commonAnnotations:
   env: dev
 
-bases:
-- ../../bases
 
 #patchesStrategicMerge:
 #- configmap.yaml
 
 configMapGenerator:
-- name: appconfig
-  files:
+- files:
   - envs/msg
+  name: appconfig
 
 images:
 - name: quay.io/apoczeka/app-python-hello
   newName: quay.io/apoczeka/app-python-hello
   newTag: latest
+- name: quay.io/apoczeka/example-helloworld:latest
+  newName: quay.io/apoczeka/example-helloworld
+  newTag: latest
+resources:
+- ../../bases
