@@ -7,18 +7,31 @@ spec:
     - default: 'https://github.com/apoczekalewicz/app-python-helloworld.git'
       name: APP_SOURCE_GIT
       type: string
+
     - default: master
       name: APP_SOURCE_REVISION
       type: string
+
+    - name: APP_SOURCE_CONTEXT
+      default: '.'
+      type: string
+
     - default: 'https://github.com/apoczekalewicz/gitops.git'
       name: APP_MANIFESTS_GIT
       type: string
+
+    - name: APP_MANIFESTS_CONTEXT
+      default: '03-tenants/04-example-helloworld/overlays/dev'
+      type: string
+
     - default: 'latest'
       name: APP_IMAGE_TAG
       type: string
+
     - default: 'quay.io/apoczeka/example-helloworld'
       name: APP_IMAGE
       type: string
+
   tasks:
     - name: git-clone
       params:
@@ -61,7 +74,7 @@ spec:
         - name: DOCKERFILE
           value: './Containerfile'
         - name: CONTEXT
-          value: '.'
+          value: $(params.APP_SOURCE_CONTEXT)
         - name: TLSVERIFY
           value: 'true'
         - name: FORMAT
@@ -107,7 +120,7 @@ spec:
         - name: NEW_IMAGE
           value: $(params.APP_IMAGE)
         - name: KUSTOMIZATION_PATH
-          value: 03-tenants/04-example-helloworld/overlays/dev
+          value: $(params.APP_MANIFESTS_CONTEXT)
         - name: GIT_REVISION
           value: master
         - name: NEW_TAG

@@ -7,14 +7,25 @@ spec:
   params:
     - name: APP_SOURCE_GIT
       value: 'https://github.com/apoczekalewicz/app-python-helloworld.git'
+
     - name: APP_SOURCE_REVISION
-      value: master
+      value: 'master'
+
+    - name: APP_SOURCE_CONTEXT:
+      value: '03-tenants/04-example-helloworld/source'
+
     - name: APP_MANIFESTS_GIT
       value: 'https://github.com/apoczekalewicz/gitops.git'
-    - name: APP_IMAGE_TAG
-      value: '1.0'
+
+    - name: APP_MANIFEST_CONTEXT
+      value: '03-tenants/04-example-helloworld/overlays/dev'
+
     - name: APP_IMAGE
       value: 'quay.io/apoczeka/example-helloworld'
+
+    - name: APP_IMAGE_TAG
+      value: '1.0'
+
   pipelineRef:
     name: example-helloworld
   serviceAccountName: pipeline
