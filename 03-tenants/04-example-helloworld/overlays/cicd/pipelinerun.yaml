@@ -11,7 +11,7 @@ spec:
     - name: APP_SOURCE_REVISION
       value: 'master'
 
-    - name: APP_SOURCE_CONTEXT:
+    - name: APP_SOURCE_CONTEXT
       value: '03-tenants/04-example-helloworld/source'
 
     - name: APP_MANIFESTS_GIT
