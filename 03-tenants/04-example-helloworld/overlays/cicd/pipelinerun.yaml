@@ -10,7 +10,7 @@ spec:
     - name: APP_SOURCE_REVISION
       value: master
     - name: APP_MANIFESTS_GIT
-      value: 'https://github.com/apoczeka/gitops.git'
+      value: 'https://github.com/apoczekalewicz/gitops.git'
     - name: APP_IMAGE_TAG
       value: 'latest'
     - name: APP_IMAGE
