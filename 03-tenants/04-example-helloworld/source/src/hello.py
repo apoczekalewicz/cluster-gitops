@@ -13,7 +13,7 @@ class handler(BaseHTTPRequestHandler):
         self.send_header('Content-type','text/html')
         self.end_headers()
 
-        self.wfile.write(bytes(message, "utf8"))
+        self.wfile.write(bytes(message2, "utf8"))
 
 print("I will show you message:", message)
 
