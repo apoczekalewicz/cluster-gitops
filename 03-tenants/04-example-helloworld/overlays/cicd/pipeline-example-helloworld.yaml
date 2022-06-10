@@ -59,7 +59,7 @@ spec:
         - name: STORAGE_DRIVER
           value: vfs
         - name: DOCKERFILE
-          value: './Dockerfile'
+          value: './Containerfile'
         - name: CONTEXT
           value: '.'
         - name: TLSVERIFY
