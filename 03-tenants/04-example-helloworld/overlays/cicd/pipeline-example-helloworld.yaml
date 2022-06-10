@@ -109,7 +109,7 @@ spec:
         - name: KUSTOMIZATION_PATH
           value: 03-tenants/04-example-helloworld/overlays/dev
         - name: GIT_REVISION
-          value: main
+          value: master
         - name: NEW_TAG
           value: $(params.APP_IMAGE_TAG)
       runAfter:

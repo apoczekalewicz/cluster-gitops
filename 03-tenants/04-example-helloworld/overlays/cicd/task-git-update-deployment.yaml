@@ -8,7 +8,7 @@ spec:
     - default: $(params.APP_MANIFESTS_GIT)
       name: GIT_REPOSITORY
       type: string
-    - default: main
+    - default: master
       name: GIT_REVISION
       type: string
     - default: 'quay.io/jstakun/hello-quarkus:latest'
