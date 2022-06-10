@@ -4,6 +4,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 
 
 message = os.getenv('APPENV', 'Default Hello World!')
+message2 = 'Msg for you is' + message
 
 class handler(BaseHTTPRequestHandler):
 
@@ -14,7 +15,7 @@ class handler(BaseHTTPRequestHandler):
 
         self.wfile.write(bytes(message, "utf8"))
 
-print("DEV: I will show you message:", message)
+print("I will show you message:", message)
 
 with HTTPServer(('', 8080), handler) as server:
     server.serve_forever()
