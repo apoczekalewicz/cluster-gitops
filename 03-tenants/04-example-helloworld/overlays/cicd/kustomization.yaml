@@ -5,4 +5,6 @@ resources:
 - pvc-workspace.yaml
 - sealed-quay-secret.yaml
 - sealed-github-secret.yaml
+- task-git-update-deployment.yaml
 - pipeline-example-helloworld.yaml
+
