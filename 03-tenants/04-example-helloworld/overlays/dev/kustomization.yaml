@@ -16,7 +16,7 @@ configMapGenerator:
 images:
 - name: quay.io/apoczeka/example-helloworld:latest
   newName: quay.io/apoczeka/example-helloworld
-  newTag: "latest"
+  newTag: "1.0"
 
 resources:
 - ../../bases
