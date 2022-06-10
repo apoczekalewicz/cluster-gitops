@@ -15,3 +15,7 @@ configMapGenerator:
   files:
   - envs/msg
 
+images:
+- name: quay.io/apoczeka/app-python-hello
+  newName: quay.io/apoczeka/app-python-hello
+  newTag: latest
