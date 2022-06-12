@@ -25,7 +25,7 @@ spec:
       type: string
 
     - name: APP_DEPLOYMENT_FILE
-      default: '03-tenants/04-example-helloword/bases/deployment.yaml'
+      default: 'https://raw.githubusercontent.com/apoczekalewicz/gitops/master/03-tenants/04-example-helloworld/bases/deployment.yaml'
       type: string
 
     - default: 'latest'
