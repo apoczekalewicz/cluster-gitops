@@ -7,5 +7,7 @@ resources:
 - sealed-github-secret.yaml
 - task-git-update-deployment.yaml
 - pipeline-example-helloworld.yaml
+- pipeline-secure-example-helloworld.yaml
 - sealed-signing-secrets.yaml
 - sealed-crda-secret.yaml
+- task-cosign.yaml
