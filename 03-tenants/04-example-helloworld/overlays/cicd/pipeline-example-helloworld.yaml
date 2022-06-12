@@ -4,7 +4,7 @@ metadata:
   name: example-helloworld
 spec:
   params:
-    - default: 'https://github.com/apoczekalewicz/app-python-helloworld.git'
+    - default: 'https://github.com/apoczekalewicz/gitops.git'
       name: APP_SOURCE_GIT
       type: string
 
@@ -13,7 +13,7 @@ spec:
       type: string
 
     - name: APP_SOURCE_CONTEXT
-      default: '.'
+      default: '03-tenants/04-example-helloworld/source'
       type: string
 
     - default: 'https://github.com/apoczekalewicz/gitops.git'
