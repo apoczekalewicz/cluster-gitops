@@ -27,7 +27,7 @@ spec:
       value: '1.1'
 
   pipelineRef:
-    name: example-helloworld
+    name: example-helloworld-secure
   serviceAccountName: pipeline
   timeout: 1h0m0s
   workspaces:
