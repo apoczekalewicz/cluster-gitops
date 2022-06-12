@@ -33,6 +33,7 @@ spec:
       type: string
 
   tasks:
+
     - name: git-clone
       params:
         - name: url
@@ -60,6 +61,26 @@ spec:
       workspaces:
         - name: output
           workspace: workspace
+
+    - name: sonarqube-scanner
+      params:
+        - name: SONAR_HOST_URL
+          value: ''
+        - name: SONAR_PROJECT_KEY
+          value: ''
+      taskRef:
+        kind: Task
+        name: sonarqube-scanner
+      workspaces:
+        - name: source
+          subPath: 03-tenants/04-example-helloworld/source/src/
+          workspace: workspace
+        - name: sonar-settings
+          workspace: sonarconfig
+      runAfter: 
+        - git-clone
+
+
 
     - name: build-image
       params:
