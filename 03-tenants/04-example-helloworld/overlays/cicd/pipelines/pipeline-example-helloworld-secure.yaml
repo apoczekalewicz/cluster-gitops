@@ -24,6 +24,10 @@ spec:
       default: '03-tenants/04-example-helloworld/overlays/dev'
       type: string
 
+    - name: APP_DEPLOYMENT_FILE
+      default: '03-tenants/04-example-helloword/bases/deployment.yaml'
+      type: string
+
     - default: 'latest'
       name: APP_IMAGE_TAG
       type: string
@@ -179,6 +183,24 @@ spec:
         - name: source
           workspace: workspace
 
+    - name: deployment-check
+      params:
+        - name: rox_central_endpoint
+          value: roxsecrets
+        - name: rox_api_token
+          value: roxsecrets
+        - name: file-url
+          value: '$(params.APP_DEPLOYMENT_FILE)'
+      runAfter:
+        - skopeo-copy
+      taskRef:
+        kind: Task
+        name: rox-deployment-check-remote
+      workspaces:
+        - name: deployfiles
+          workspace: workspace
+
+
     - name: git-update-deployment
       params:
         - name: GIT_REPOSITORY
@@ -197,6 +219,7 @@ spec:
         - rox-image-check
         - rox-image-scan
         - sign-image
+        - deployment-check
       taskRef:
         kind: Task
         name: git-update-deployment
