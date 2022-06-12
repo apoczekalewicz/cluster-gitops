@@ -39,3 +39,6 @@ spec:
     - name: git-basic-auth
       secret:
         secretName: github-creds
+    - name: sonarconfig
+      configmap:
+        name: sonar-properties
