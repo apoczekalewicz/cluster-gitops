@@ -5,9 +5,6 @@ commonAnnotations:
   env: dev
 
 
-#patchesStrategicMerge:
-#- configmap.yaml
-
 resources:
 - ../../bases
 
