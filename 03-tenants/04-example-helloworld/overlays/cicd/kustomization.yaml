@@ -8,6 +8,7 @@ resources:
 - configs/sealed-github-secret.yaml
 - configs/sealed-signing-secrets.yaml
 - configs/sealed-sonar-secret.yaml
+- configs/sealed-roxsecrets.yaml
 
 - tasks/task-cosign.yaml
 - tasks/task-git-update-deployment.yaml
