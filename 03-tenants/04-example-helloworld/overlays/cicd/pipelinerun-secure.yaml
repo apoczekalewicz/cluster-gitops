@@ -24,7 +24,7 @@ spec:
       value: 'quay.io/apoczeka/example-helloworld'
 
     - name: APP_IMAGE_TAG
-      value: '1.1'
+      value: '1.2'
 
   pipelineRef:
     name: example-helloworld-secure
