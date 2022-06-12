@@ -20,6 +20,9 @@ spec:
     - name: APP_MANIFEST_CONTEXT
       value: '03-tenants/04-example-helloworld/overlays/dev'
 
+    - name: APP_DEPLOYMENT_FILE
+      value: '03-tenants/04-example-helloword/bases/deployment.yaml'
+
     - name: APP_IMAGE
       value: 'quay.io/apoczeka/example-helloworld'
 
