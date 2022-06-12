@@ -21,7 +21,7 @@ spec:
       value: '03-tenants/04-example-helloworld/overlays/dev'
 
     - name: APP_DEPLOYMENT_FILE
-      value: '03-tenants/04-example-helloword/bases/deployment.yaml'
+      value: 'https://raw.githubusercontent.com/apoczekalewicz/gitops/master/03-tenants/04-example-helloworld/bases/deployment.yaml'
 
     - name: APP_IMAGE
       value: 'quay.io/apoczeka/example-helloworld'
