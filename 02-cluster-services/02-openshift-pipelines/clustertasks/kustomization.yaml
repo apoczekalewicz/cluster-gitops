@@ -14,3 +14,4 @@ resources:
   - rox-deployment-check-task.yaml
   - rox-image-check-task.yaml
   - rox-image-scan-task.yaml
+  - rox-deployment-check-remote.yaml
