@@ -1,0 +1,3 @@
+cosign generate-key-pair k8s://example-helloworld--cicd/signing-secrets
+crda auth
+

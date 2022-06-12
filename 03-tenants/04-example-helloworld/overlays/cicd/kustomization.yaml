@@ -2,12 +2,15 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-- pvc-workspace.yaml
-- sealed-quay-secret.yaml
-- sealed-github-secret.yaml
-- task-git-update-deployment.yaml
-- pipeline-example-helloworld.yaml
-- pipeline-example-helloworld-secure.yaml
-- sealed-signing-secrets.yaml
-- sealed-crda-secret.yaml
-- task-cosign.yaml
+- pvc/pvc-workspace.yaml
+
+- configs/sealed-quay-secret.yaml
+- configs/sealed-github-secret.yaml
+- configs/sealed-signing-secrets.yaml
+
+- tasks/task-cosign.yaml
+- tasks/task-git-update-deployment.yaml
+
+- pipelines/pipeline-example-helloworld.yaml
+- pipelines/pipeline-example-helloworld-secure.yaml
+
