@@ -11,6 +11,10 @@ resources:
 
 - tasks/task-cosign.yaml
 - tasks/task-git-update-deployment.yaml
+- tasks/rox-deployment-check-remote.yaml
+- tasks/rox-image-check-task.yaml
+- tasks/rox-image-scan-task.yaml
+
 
 - pipelines/pipeline-example-helloworld.yaml
 - pipelines/pipeline-example-helloworld-secure.yaml
