@@ -130,6 +130,38 @@ spec:
         - name: images-url
           workspace: images-url
 
+
+    - name: rox-image-check
+      params:
+        - name: rox_central_endpoint
+          value: roxsecrets
+        - name: rox_api_token
+          value: roxsecrets
+        - name: image
+          value: '$(params.APP_IMAGE):$(params.APP_IMAGE_TAG)'
+      runAfter:
+        - skopeo-copy
+      taskRef:
+        kind: Task
+        name: rox-image-check
+
+    - name: rox-image-scan
+      params:
+        - name: rox_central_endpoint
+          value: roxsecrets
+        - name: rox_api_token
+          value: roxsecrets
+        - name: image
+          value: '$(params.APP_IMAGE):$(params.APP_IMAGE_TAG)'
+        - name: output_format
+          value: table
+      runAfter:
+        - skopeo-copy
+      taskRef:
+        kind: Task
+        name: rox-image-scan
+
+
     - name: sign-image
       params:
         - name: cosignkey
