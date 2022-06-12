@@ -40,5 +40,5 @@ spec:
       secret:
         secretName: github-creds
     - name: sonarconfig
-      configmap:
-        name: sonar-properties
+      secret:
+        secretName: sonar-properties
