@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 import os
+import crypt
 from http.server import HTTPServer, BaseHTTPRequestHandler
+from hashlib import pbkdf2_hmac
+
+hash = pbkdf2_hmac('sha256', password, b'D8VxSmTZt2E2YV454mkqAY5e', 100000)    # Noncompliant: salt is hardcoded
+
 
 
 message = os.getenv('APPENV', 'Default Hello World!')
