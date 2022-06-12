@@ -176,3 +176,4 @@ spec:
     - name: workspace
     - name: images-url
     - name: git-basic-auth
+    - name: sonarconfig
