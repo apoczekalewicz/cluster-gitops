@@ -194,7 +194,9 @@ spec:
         - name: NEW_TAG
           value: $(params.APP_IMAGE_TAG)
       runAfter:
-        - skopeo-copy
+        - rox-image-check
+        - rox-image-scan
+        - sign-image
       taskRef:
         kind: Task
         name: git-update-deployment
