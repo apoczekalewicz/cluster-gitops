@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
-  name: secure-example-helloworld
+  name: example-helloworld-secure
 spec:
   params:
     - default: 'https://github.com/apoczekalewicz/app-python-helloworld.git'
