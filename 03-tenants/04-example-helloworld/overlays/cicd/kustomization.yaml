@@ -7,4 +7,4 @@ resources:
 - sealed-github-secret.yaml
 - task-git-update-deployment.yaml
 - pipeline-example-helloworld.yaml
-
+- sealed-signing-secrets.yaml
