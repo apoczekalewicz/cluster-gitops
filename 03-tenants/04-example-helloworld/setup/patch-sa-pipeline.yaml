@@ -2,6 +2,7 @@ apiVersion: redhatcop.redhat.io/v1alpha1
 kind: Patch
 metadata:
   name: sa-pipeline
+  namespace: example-helloworld-cicd
 spec:
   serviceAccountRef:
     name: patch
