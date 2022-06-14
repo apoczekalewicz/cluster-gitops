@@ -1,0 +1,20 @@
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: Patch
+metadata:
+  name: sa-pipeline
+spec:
+  serviceAccountRef:
+    name: patch
+  patches:
+    sa-pipeline:
+      targetObjectRef:
+        apiVersion: v1
+        kind: ServiceAccount
+        name: pipeline
+        namespace: example-helloworld-cicd
+      patchTemplate: |
+        secrets:
+        - name: quay-creds
+        - name: github-creds
+      patchType: application/merge-patch+json
+
