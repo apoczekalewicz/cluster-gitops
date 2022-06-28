@@ -3,6 +3,16 @@ kind: DNS
 metadata:
   name: default
 spec:
+
+  servers:
+  - name: vmware
+    zones:
+    - spm.lab
+    forwardPlugin:
+      policy: Random
+      upstreams:
+        - 172.17.16.2:53
+
   logLevel: Normal
   nodePlacement: {}
   operatorLogLevel: Normal
@@ -11,13 +21,4 @@ spec:
     upstreams:
     - port: 53
       type: SystemResolvConf
-
-  servers:
-  - name: vmware
-    zones: 
-      - spm.lab
-    forwardPlugin:
-      policy: Random
-      upstreams: 
-        - 172.17.16.2:53
 
