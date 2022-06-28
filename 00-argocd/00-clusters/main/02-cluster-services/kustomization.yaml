@@ -13,5 +13,6 @@ bases:
   - ../../../02-cluster-services/07-aap
   - ../../../02-cluster-services/08-sealed-secrets
   - ../../../02-cluster-services/09-patch
+  - ../../../02-cluster-services/10-mtv
 resources:
   - cluster-services-project.yaml
