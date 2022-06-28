@@ -17,6 +17,7 @@ spec:
     zones: 
       - spm.lab
     forwardPlugin:
+      policy: Random
       upstreams: 
-        - 172.17.16.2
+        - 172.17.16.2:53
 
