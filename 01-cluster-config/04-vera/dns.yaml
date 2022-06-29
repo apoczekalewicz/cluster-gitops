@@ -4,6 +4,7 @@ metadata:
   name: default
 spec:
 
+  logLevel: Trace
   servers:
   - name: vmware
     zones:
