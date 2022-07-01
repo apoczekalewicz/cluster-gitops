@@ -22,6 +22,7 @@ spec:
     enableCommonBootImageImport: true
     sriovLiveMigration: true
     withHostPassthroughCPU: true
+    withHostModelCPU: true
   workloadUpdateStrategy:
     batchEvictionInterval: 1m0s
     batchEvictionSize: 10
