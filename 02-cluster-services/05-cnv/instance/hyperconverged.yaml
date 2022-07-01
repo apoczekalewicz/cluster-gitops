@@ -21,7 +21,7 @@ spec:
   featureGates:
     enableCommonBootImageImport: true
     sriovLiveMigration: true
-    withHostPassthroughCPU: false
+    withHostPassthroughCPU: true
   workloadUpdateStrategy:
     batchEvictionInterval: 1m0s
     batchEvictionSize: 10
