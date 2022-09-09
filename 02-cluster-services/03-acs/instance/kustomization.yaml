@@ -1,7 +1,14 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: stackrox
+commonAnnotations:
+  argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  argocd.argoproj.io/sync-wave: "2"
 
-bases:
-  - https://github.com/redhat-cop/gitops-catalog/advanced-cluster-security-operator/instance/overlays/internal-registry-integration
+
+resources:
+  - central.yaml
+  - create-cluster-init-bundle-job.yaml
+  - create-cluter-init-bundle-sa.yaml
+  - namespace.yaml
+  - secured-cluster.yaml
