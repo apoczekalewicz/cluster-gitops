@@ -6,4 +6,3 @@ resources:
   - 5-rhacs-create-init-bundle-sa.yaml
   - 5-rhacs-operator-central.yaml
   - 5-rhacs-operator-securedcluster.yaml
-  - 5-rhacs-operator.yaml
