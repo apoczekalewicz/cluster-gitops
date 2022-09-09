@@ -3,5 +3,5 @@ kind: Kustomization
 
 bases:
   - operator
-  - instance
-  - pipelines-and-secrets
+#  - instance
+#  - pipelines-and-secrets
