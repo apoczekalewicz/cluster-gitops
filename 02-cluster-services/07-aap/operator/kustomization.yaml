@@ -13,3 +13,12 @@ patchesJson6902:
       namespace: ansible-automation-platform
     path: patch-channel.yaml
 
+patches:
+  - target:
+      kind: Subscription
+      name: ansible-automation-platform
+    patch: |-
+      - op: replace
+        path: /spec/installPlanApproval
+        value: 'Manual'
+
