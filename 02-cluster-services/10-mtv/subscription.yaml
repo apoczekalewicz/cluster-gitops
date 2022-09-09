@@ -5,7 +5,7 @@ metadata:
   namespace: openshift-mtv
 spec:
   channel: release-v2.3
-  installPlanApproval: Automatic
+  installPlanApproval: Manual
   name: mtv-operator
   source: redhat-operators
   sourceNamespace: openshift-marketplace
