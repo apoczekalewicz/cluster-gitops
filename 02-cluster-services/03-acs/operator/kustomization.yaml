@@ -7,6 +7,4 @@ commonAnnotations:
 
 
 resources:
-  - 00-namespace.yaml
-  - 01-og.yaml
-  - 02-subscription.yaml
+  - operator.yaml
