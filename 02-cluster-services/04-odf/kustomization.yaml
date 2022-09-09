@@ -4,4 +4,4 @@ kind: Kustomization
 bases:
   - operator
   - instance/overlays/ovirt
-#  - sc_default_annotation
+  - sc_default_annotation
