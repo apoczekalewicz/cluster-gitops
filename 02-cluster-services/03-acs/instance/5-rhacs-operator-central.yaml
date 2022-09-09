@@ -1,10 +1,20 @@
-# Note this is resource reduced, this should not be taken as a production ready installation
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    openshift.io/cluster-monitoring: "true"
+    argocd.argoproj.io/managed-by: openshift-gitops
+  name: stackrox
+---
 apiVersion: platform.stackrox.io/v1alpha1
 kind: Central
 metadata:
+  name: stackrox-central-services
+  namespace: stackrox
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
-  name: central
+    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"
 spec:
   central:
     exposure:
@@ -18,13 +28,12 @@ spec:
     persistence:
       persistentVolumeClaim:
         claimName: stackrox-db
+        size: 5Gi
   egress:
     connectivityPolicy: Online
   scanner:
     analyzer:
       scaling:
-        autoScaling: Enabled
-        maxReplicas: 5
-        minReplicas: 2
-        replicas: 2
+        autoScaling: Disabled
+        replicas: 1
     scannerComponent: Enabled
