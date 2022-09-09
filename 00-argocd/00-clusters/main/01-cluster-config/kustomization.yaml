@@ -7,7 +7,7 @@ bases:
   - ../../../01-cluster-config/01-groups-and-membership
   - ../../../01-cluster-config/02-openshift-gitops
   - ../../../01-cluster-config/03-oauth
-#  - ../../../01-cluster-config/04-vera
+  - ../../../01-cluster-config/04-vera
 
 resources:
   - cluster-config-project.yaml
