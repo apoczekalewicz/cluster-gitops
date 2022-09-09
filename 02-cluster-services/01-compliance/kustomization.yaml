@@ -5,3 +5,13 @@ namespace: openshift-compliance
 
 bases:
   - https://github.com/redhat-cop/gitops-catalog/compliance-operator/operator/overlays/release-0.1?ref=main
+
+patches:
+  - target:
+      kind: Subscription
+      name: compliance-operator
+    patch: |-
+      - op: replace
+        path: /spec/installPlanApproval
+        value: 'Manual'
+
