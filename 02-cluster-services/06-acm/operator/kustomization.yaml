@@ -12,3 +12,12 @@ patches:
       - op: replace
         path: /spec/channel
         value: 'release-2.6'
+
+patches:
+  - target:
+      kind: Subscription
+      name: advanced-cluster-management
+    patch: |-
+      - op: replace
+        path: /spec/installPlanApproval
+        value: 'Manual'
