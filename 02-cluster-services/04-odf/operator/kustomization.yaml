@@ -3,3 +3,13 @@ kind: Kustomization
 
 bases:
   - github.com/redhat-cop/gitops-catalog/openshift-data-foundation-operator/operator/overlays/stable-4.10?ref=main
+
+patches:
+  - target:
+      kind: Subscription
+      name: odf-operator
+    patch: |-
+      - op: replace
+        path: /spec/installPlanApproval
+        value: 'Manual'
+
