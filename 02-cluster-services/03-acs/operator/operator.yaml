@@ -25,7 +25,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   channel: latest
-  installPlanApproval: Manual
+  installPlanApproval: Automatic
   name: rhacs-operator
   source: redhat-operators
   sourceNamespace: openshift-marketplace
