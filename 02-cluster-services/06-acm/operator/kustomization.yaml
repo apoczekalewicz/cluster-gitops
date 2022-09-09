@@ -11,4 +11,4 @@ patches:
     patch: |-
       - op: replace
         path: /spec/channel
-        value: 'release-2.5'
+        value: 'release-2.6'
