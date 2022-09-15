@@ -48,7 +48,7 @@ spec:
     kind: NetworkPolicy  
   - group: 'bitnami.com'
     kind: SealedSecret
-  - group: 'redhatcop.redhat.io'
+  - group: 'redhatcop.redhat.io/v1alpha1'
     kind: Patch
  
   orphanedResources:
