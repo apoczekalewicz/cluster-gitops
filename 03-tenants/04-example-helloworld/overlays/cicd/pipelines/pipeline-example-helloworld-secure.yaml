@@ -201,36 +201,36 @@ spec:
           workspace: workspace
 
 
-    - name: git-update-deployment
-      params:
-        - name: GIT_REPOSITORY
-          value: $(params.APP_MANIFESTS_GIT)
-        - name: CURRENT_IMAGE
-          value: '$(params.APP_IMAGE):latest'
-        - name: NEW_IMAGE
-          value: $(params.APP_IMAGE)
-        - name: KUSTOMIZATION_PATH
-          value: $(params.APP_MANIFESTS_CONTEXT)
-        - name: GIT_REVISION
-          value: master
-        - name: NEW_TAG
-          value: $(params.APP_IMAGE_TAG)
-      runAfter:
-        - rox-image-check
-        - rox-image-scan
-        - sign-image
-        - deployment-check
-      taskRef:
-        kind: Task
-        name: git-update-deployment
-      workspaces:
-        - name: workspace
-          workspace: workspace
-        - name: basic-auth
-          workspace: git-basic-auth
+#    - name: git-update-deployment
+#      params:
+#        - name: GIT_REPOSITORY
+#          value: $(params.APP_MANIFESTS_GIT)
+#        - name: CURRENT_IMAGE
+#          value: '$(params.APP_IMAGE):latest'
+#        - name: NEW_IMAGE
+#          value: $(params.APP_IMAGE)
+#        - name: KUSTOMIZATION_PATH
+#          value: $(params.APP_MANIFESTS_CONTEXT)
+#        - name: GIT_REVISION
+#          value: master
+#        - name: NEW_TAG
+#          value: $(params.APP_IMAGE_TAG)
+#      runAfter:
+#        - rox-image-check
+#        - rox-image-scan
+#        - sign-image
+#        - deployment-check
+#      taskRef:
+#        kind: Task
+#        name: git-update-deployment
+#      workspaces:
+#        - name: workspace
+#          workspace: workspace
+#        - name: basic-auth
+#          workspace: git-basic-auth
 
   workspaces:
     - name: workspace
     - name: images-url
-    - name: git-basic-auth
+#    - name: git-basic-auth
     - name: sonarconfig
