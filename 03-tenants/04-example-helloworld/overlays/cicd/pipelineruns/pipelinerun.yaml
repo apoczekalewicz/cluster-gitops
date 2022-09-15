@@ -36,6 +36,6 @@ spec:
         claimName: workspace
     - emptyDir: {}
       name: images-url
-    - name: git-basic-auth
-      secret:
-        secretName: github-creds
+#    - name: git-basic-auth
+#      secret:
+#        secretName: github-creds
