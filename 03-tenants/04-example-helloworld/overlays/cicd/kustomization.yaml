@@ -16,7 +16,7 @@ resources:
 - tasks/rox-image-check-task.yaml
 - tasks/rox-image-scan-task.yaml
 
-
+- pipelines/patch-sa-pipeline.yaml
 - pipelines/pipeline-example-helloworld.yaml
 - pipelines/pipeline-example-helloworld-secure.yaml
 
