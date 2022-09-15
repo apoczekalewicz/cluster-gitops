@@ -16,6 +16,6 @@ spec:
       patchTemplate: |
         secrets:
         - name: quay-creds
-        - name: github-creds
+#        - name: github-creds
       patchType: application/merge-patch+json
 
