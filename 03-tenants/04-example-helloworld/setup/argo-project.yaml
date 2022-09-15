@@ -48,6 +48,8 @@ spec:
     kind: NetworkPolicy  
   - group: 'bitnami.com'
     kind: SealedSecret
+  - group: 'redhatcop.redhat.io'
+    kind: Patch
  
   orphanedResources:
     warn: false
