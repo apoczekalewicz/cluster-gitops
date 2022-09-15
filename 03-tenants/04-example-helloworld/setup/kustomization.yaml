@@ -9,4 +9,3 @@ resources:
   - rbac-admins.yaml
   - rbac-users.yaml
   - sa-patch.yaml
-  - patch-sa-pipeline.yaml
