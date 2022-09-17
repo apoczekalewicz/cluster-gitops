@@ -105,7 +105,7 @@ spec:
         - name: FORMAT
           value: oci
       runAfter:
-        - git-clone
+        - sonarqube-scanner
       taskRef:
         kind: ClusterTask
         name: buildah
