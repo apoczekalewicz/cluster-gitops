@@ -16,6 +16,7 @@ resources:
 - tasks/rox-image-check-task.yaml
 - tasks/rox-image-scan-task.yaml
 - tasks/sonarqube-scanner.yaml
+- tasks/git-clone.yaml
 
 - pipelines/patch-sa-pipeline.yaml
 - pipelines/pipeline-example-helloworld.yaml
