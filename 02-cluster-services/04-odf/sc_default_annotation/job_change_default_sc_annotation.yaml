@@ -1,7 +1,6 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: change-default-sc-annotation
   generateName: change-default-sc-annotation-
 spec:
   template:
