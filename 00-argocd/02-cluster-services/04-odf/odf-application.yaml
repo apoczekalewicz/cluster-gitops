@@ -18,7 +18,7 @@ spec:
   syncPolicy:
     automated:
       prune: false
-      selfHeal: false
+      selfHeal: true
     syncOptions:
       - ApplyOutOfSyncOnly=true
     retry:
