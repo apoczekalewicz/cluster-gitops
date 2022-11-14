@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: openshift-gitops
 
 resources:
-  - odf-application.yaml
+  - ./odf-application.yaml
