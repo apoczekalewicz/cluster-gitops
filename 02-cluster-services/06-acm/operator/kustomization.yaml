@@ -10,8 +10,8 @@ patches:
       name: advanced-cluster-management
     patch: |-
       - op: replace
-        path: /spec/channel
-        value: 'release-2.6'
+        path: /spec/installPlanApproval
+        value: 'Manual'
 
 patches:
   - target:
@@ -19,5 +19,6 @@ patches:
       name: advanced-cluster-management
     patch: |-
       - op: replace
-        path: /spec/installPlanApproval
-        value: 'Manual'
+        path: /spec/channel
+        value: 'release-2.6'
+
