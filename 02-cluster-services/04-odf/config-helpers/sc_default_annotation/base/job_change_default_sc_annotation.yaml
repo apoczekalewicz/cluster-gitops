@@ -11,7 +11,7 @@ spec:
         image: image-registry.openshift-image-registry.svc:5000/openshift/cli
         env:
           - name: DEFAULT_SC
-            value: 'ocs-storagecluster-cephfs'
+            value: 'ocs-storagecluster-ceph-rbd'
           - name: ANNOTATE
             value: 'storageclass.kubernetes.io/is-default-class'
         command:
