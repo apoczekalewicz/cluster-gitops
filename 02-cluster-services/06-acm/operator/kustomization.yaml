@@ -12,8 +12,6 @@ patches:
       - op: replace
         path: /spec/installPlanApproval
         value: 'Manual'
-
-patches:
   - target:
       kind: Subscription
       name: advanced-cluster-management
