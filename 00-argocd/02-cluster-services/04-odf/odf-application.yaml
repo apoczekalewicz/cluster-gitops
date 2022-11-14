@@ -19,7 +19,7 @@ spec:
     automated:
       prune: false
       selfHeal: true
-   syncOptions:
+    syncOptions:
       - ApplyOutOfSyncOnly=true
     retry:
       limit: 5 # number of failed sync attempt retries; unlimited number of attempts if less than 0
