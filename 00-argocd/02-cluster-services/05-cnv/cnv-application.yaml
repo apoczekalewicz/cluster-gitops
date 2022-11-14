@@ -5,7 +5,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "37"
   labels:
     gitops.ownedBy: openshift-gitops
-  name: cnv
+  name: S-CNV
 spec:
   destination:
     namespace: openshift-compliance

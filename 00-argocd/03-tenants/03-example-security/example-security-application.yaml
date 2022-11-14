@@ -5,7 +5,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "40"
   labels:
     gitops.ownedBy: openshift-gitops
-  name: example-security
+  name: T-example-security
 spec:
   destination:
     namespace: example-security

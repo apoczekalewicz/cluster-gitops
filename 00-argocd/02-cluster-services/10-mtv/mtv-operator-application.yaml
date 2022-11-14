@@ -5,7 +5,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "37"
   labels:
     gitops.ownedBy: openshift-gitops
-  name: mtv
+  name: S-MTV
 spec:
   destination:
     namespace: openshift-mtv

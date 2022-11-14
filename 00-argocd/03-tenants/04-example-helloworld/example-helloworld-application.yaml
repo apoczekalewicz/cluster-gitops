@@ -5,7 +5,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "40"
   labels:
     gitops.ownedBy: openshift-gitops
-  name: example-helloworld
+  name: T-example-helloworld
 spec:
   destination:
     namespace: example-helloworld
