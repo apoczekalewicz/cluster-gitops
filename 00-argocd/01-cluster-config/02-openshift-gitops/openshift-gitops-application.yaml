@@ -5,7 +5,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "21"
   labels:
     gitops.ownedBy: openshift-gitops
-  name: C-gitops-config
+  name: c-gitops-config
 spec:
   destination:
     namespace: openshift-gitops

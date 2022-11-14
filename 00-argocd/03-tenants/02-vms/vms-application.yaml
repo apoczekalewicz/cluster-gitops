@@ -5,7 +5,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "40"
   labels:
     gitops.ownedBy: openshift-gitops
-  name: T-vms
+  name: t-vms
 spec:
   destination:
     namespace: vms

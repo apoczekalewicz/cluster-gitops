@@ -5,7 +5,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "37"
   labels:
     gitops.ownedBy: openshift-gitops
-  name: S-AAP
+  name: s-app
 spec:
   destination:
     namespace: ansible-automation-platform

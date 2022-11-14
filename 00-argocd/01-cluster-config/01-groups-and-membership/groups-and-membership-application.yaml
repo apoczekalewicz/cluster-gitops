@@ -5,7 +5,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "22"
   labels:
     gitops.ownedBy: openshift-gitops
-  name: C-groups
+  name: c-groups
 spec:
   destination:
     namespace: openshift-gitops

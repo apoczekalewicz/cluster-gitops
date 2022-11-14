@@ -5,7 +5,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "37"
   labels:
     gitops.ownedBy: openshift-gitops
-  name: S-compliance-operator
+  name: s-compliance-operator
 spec:
   destination:
     namespace: openshift-compliance
