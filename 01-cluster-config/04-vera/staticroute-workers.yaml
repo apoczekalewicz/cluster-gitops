@@ -19,7 +19,7 @@ spec:
       units:
       - contents: |
              [Unit]
-             Description=nmcli-dev-modify-for-static-routes
+             Description=nmcli-dev-modify-for-static-routes-vmware-network
              After=network-online.target
              [Service]
              Type=oneshot
