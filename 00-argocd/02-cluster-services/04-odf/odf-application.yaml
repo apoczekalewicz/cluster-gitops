@@ -15,10 +15,10 @@ spec:
     path: 02-cluster-services/04-odf
     repoURL: https://github.com/apoczekalewicz/gitops.git
     targetRevision: HEAD
-  syncPolicy:
-    automated:
-      prune: false
-      selfHeal: true
+#  syncPolicy:
+#    automated:
+#      prune: false
+#      selfHeal: true
     syncOptions:
       - ApplyOutOfSyncOnly=true
     retry:
