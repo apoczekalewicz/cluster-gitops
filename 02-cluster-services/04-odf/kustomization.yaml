@@ -4,5 +4,5 @@ kind: Kustomization
 bases:
   - operator/overlays/stable-4.10/
   - instance/overlays/ovirt
-  - node-labeler/overlays/default
-  - sc_default_annotation/overlays/default/
+  - config_helpers/node-labeler/overlays/default
+  - config_helpers/sc_default_annotation/overlays/default/
