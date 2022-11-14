@@ -5,3 +5,4 @@ metadata:
   namespace: openshift-storage
 spec:
   enableCephTools: true
+
