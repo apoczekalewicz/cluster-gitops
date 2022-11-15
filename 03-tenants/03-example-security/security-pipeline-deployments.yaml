@@ -1,0 +1,29 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: deployment-check
+spec:
+  params:
+    - default: >-
+        https://raw.githubusercontent.com/apoczekalewicz/gitops/master/03-tenants/04-example-helloworld/bases/deployment.yaml
+      description: Deployment URL
+      name: file-url
+      type: string
+  tasks:
+    - name: rox-deployment-check-remote
+      params:
+        - name: rox_central_endpoint
+          value: roxsecrets
+        - name: rox_api_token
+          value: roxsecrets
+        - name: file-url
+          value: $(params.file-url)
+      taskRef:
+        kind: ClusterTask
+        name: rox-deployment-check-remote
+      workspaces:
+        - name: deployfiles
+          workspace: workspace
+  workspaces:
+    - name: workspace
+
