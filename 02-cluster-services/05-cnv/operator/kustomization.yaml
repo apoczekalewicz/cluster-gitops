@@ -3,15 +3,5 @@ kind: Kustomization
 
 namespace: openshift-cnv
 
-bases:
-  - https://github.com/redhat-cop/gitops-catalog/virtualization-operator/base?ref=main
-
-patches:
-  - target:
-      kind: Subscription
-      name: kubevirt-hyperconverged
-    patch: |-
-      - op: replace
-        path: /spec/installPlanApproval
-        value: 'Manual'
-
+resources:
+  - operator.yaml
