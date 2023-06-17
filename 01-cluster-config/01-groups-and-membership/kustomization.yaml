@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - cluster-admins-group.yaml
   - users-group.yaml
+  - clusterrolebinding-argo.yaml
